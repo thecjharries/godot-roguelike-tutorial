@@ -157,7 +157,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Character" instance=ExtResource("1_erow7")]
+[node name="Player" instance=ExtResource("1_erow7")]
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
