@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		if -1 != transition:
 			set_state(transition)
 
-func _state_logic(delta: float) -> void:
+func _state_logic(_delta: float) -> void:
 	pass
 
 func _get_transition() -> int:
