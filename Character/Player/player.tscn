@@ -1,8 +1,64 @@
-[gd_scene load_steps=17 format=3 uid="uid://cspwqp7xv287u"]
+[gd_scene load_steps=21 format=3 uid="uid://cspwqp7xv287u"]
 
 [ext_resource type="PackedScene" uid="uid://c13mu42yvgsyq" path="res://Character/character.tscn" id="1_erow7"]
 [ext_resource type="Texture2D" uid="uid://c2t1hwu7v46p2" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_adwsu"]
 [ext_resource type="Texture2D" uid="uid://f47531g5xpwt" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3_k2nte"]
+
+[sub_resource type="Animation" id="Animation_022ui"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_dquby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uu3pc"]
+resource_name = "Move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxvtp"]
+_data = {
+"Idle": SubResource("Animation_022ui"),
+"Move": SubResource("Animation_uu3pc"),
+"RESET": SubResource("Animation_dquby")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8iagm"]
 atlas = ExtResource("2_adwsu")
@@ -103,6 +159,11 @@ animations = [{
 
 [node name="Character" instance=ExtResource("1_erow7")]
 
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_cxvtp")
+}
+
 [node name="AnimatedSprite2D" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_hxjk0")
-animation = &"move"
+animation = &"idle"
