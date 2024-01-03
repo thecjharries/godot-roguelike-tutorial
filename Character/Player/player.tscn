@@ -1,5 +1,108 @@
-[gd_scene load_steps=2 format=3 uid="uid://cspwqp7xv287u"]
+[gd_scene load_steps=17 format=3 uid="uid://cspwqp7xv287u"]
 
 [ext_resource type="PackedScene" uid="uid://c13mu42yvgsyq" path="res://Character/character.tscn" id="1_erow7"]
+[ext_resource type="Texture2D" uid="uid://c2t1hwu7v46p2" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_idle_spritesheet.png" id="2_adwsu"]
+[ext_resource type="Texture2D" uid="uid://f47531g5xpwt" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/heroes/knight/knight_run_spritesheet.png" id="3_k2nte"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iagm"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c68e"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dccr3"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmt6e"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ycp"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1po2q"]
+atlas = ExtResource("2_adwsu")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuie0"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukttd"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q6cs"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu6p1"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lbp1"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvc0w"]
+atlas = ExtResource("3_k2nte")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxjk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iagm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c68e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dccr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmt6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5ycp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1po2q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuie0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukttd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q6cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu6p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lbp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvc0w")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
 
 [node name="Character" instance=ExtResource("1_erow7")]
+
+[node name="AnimatedSprite2D" parent="." index="3"]
+sprite_frames = SubResource("SpriteFrames_hxjk0")
+animation = &"move"
