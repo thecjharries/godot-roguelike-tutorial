@@ -1,6 +1,5 @@
 extends Character
 
-
 func _process(_delta: float) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
 
