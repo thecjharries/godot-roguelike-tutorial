@@ -205,11 +205,14 @@ position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ce5oq")
 
 [node name="Sword" type="Node2D" parent="." index="3"]
+
+[node name="Node2D" type="Node2D" parent="Sword" index="0"]
 rotation = -1.5708
 
-[node name="Sprite2D" type="Sprite2D" parent="Sword" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Sword/Node2D" index="0"]
 position = Vector2(7, 3)
 rotation = -0.785398
+scale = Vector2(1, 1)
 texture = ExtResource("6_80m7d")
 offset = Vector2(5, -4)
 
