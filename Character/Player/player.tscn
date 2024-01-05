@@ -216,6 +216,8 @@ scale = Vector2(1, 1)
 texture = ExtResource("6_80m7d")
 offset = Vector2(5, -4)
 
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="1"]
+
 [node name="AnimationPlayer" parent="." index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_cxvtp")
