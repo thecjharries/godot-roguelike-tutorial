@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cytd53ryfbjuc"]
+[gd_scene load_steps=6 format=3 uid="uid://cytd53ryfbjuc"]
 
 [ext_resource type="Texture2D" uid="uid://4l21dg1ediyi" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/full tilemap.png" id="1_bfnxv"]
+[ext_resource type="Script" path="res://game.gd" id="1_mcowq"]
 [ext_resource type="PackedScene" uid="uid://cspwqp7xv287u" path="res://Character/Player/player.tscn" id="2_4q0su"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5smx"]
@@ -64,6 +65,7 @@ texture = ExtResource("1_bfnxv")
 sources/0 = SubResource("TileSetAtlasSource_d5smx")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_mcowq")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_c8yk8")
