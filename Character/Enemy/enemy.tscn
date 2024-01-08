@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://Character/Enemy/enemy.gd" id="2_ivnho"]
 
 [node name="Enemy" instance=ExtResource("1_57qxb")]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_ivnho")
 
 [node name="PathTimer" type="Timer" parent="." index="4"]
