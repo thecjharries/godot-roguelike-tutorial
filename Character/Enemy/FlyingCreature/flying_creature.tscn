@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkq0w02vg80le"]
+
+[ext_resource type="PackedScene" uid="uid://doqpxqwwqjgqh" path="res://Character/Enemy/enemy.tscn" id="1_1ann7"]
+[ext_resource type="Script" path="res://Character/Enemy/FlyingCreature/flying_creature.gd" id="2_xsd2q"]
+[ext_resource type="Texture2D" uid="uid://cpqxlrxmj8veg" path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/enemies/flying creature/fly_anim_spritesheet.png" id="3_o0ua3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm0s7"]
+atlas = ExtResource("3_o0ua3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04klq"]
+atlas = ExtResource("3_o0ua3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_705ld"]
+atlas = ExtResource("3_o0ua3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql4yk"]
+atlas = ExtResource("3_o0ua3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mvpqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm0s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04klq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_705ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql4yk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncojf"]
+radius = 3.0
+
+[node name="FlyingCreature" instance=ExtResource("1_1ann7")]
+script = ExtResource("2_xsd2q")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_mvpqb")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ncojf")
