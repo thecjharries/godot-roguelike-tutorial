@@ -2,12 +2,13 @@
 extends Character
 class_name Enemy
 
-@onready var player: CharacterBody2D = get_tree().current_scene.get_node("Player")
+@onready var player: CharacterBody2D = get_node("../Player")
 @onready var path_timer: Timer = get_node("PathTimer")
 @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 
 func chase() -> void:
 	if not navigation_agent.is_target_reached():
+		var current_global_position = navigation_agent
 		var vector_to_next_point: Vector2 = navigation_agent.get_next_path_position() - global_position
 		move_direction = vector_to_next_point
 
