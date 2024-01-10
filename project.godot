@@ -13,6 +13,13 @@ config_version=4
 config/name="Godot Roguelike Tutorial"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=480
+window/size/height=270
+window/size/test_width=1280
+window/size/test_height=720
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
