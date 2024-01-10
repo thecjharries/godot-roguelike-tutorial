@@ -6,42 +6,21 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=5
+config_version=4
 
 [application]
 
-config/name="Godot-roguelike-tutorial"
-run/main_scene="res://game.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/name="Godot Roguelike Tutorial"
+config/icon="res://icon.png"
 
-[display]
+[gui]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
-window/size/window_width_override=1280
-window/size/window_height_override=720
-window/stretch/mode="viewport"
-mouse_cursor/custom_image="res://Art/v1.1 dungeon crawler 16X16 pixel pack/ui (new)/crosshair_3.png"
-mouse_cursor/custom_image_hotspot=Vector2(16, 16)
-mouse_cursor/tooltip_position_offset=Vector2(32, 32)
+common/drop_mouse_on_gui_input_disabled=true
 
-[input]
+[physics]
 
-ui_attack={
-"deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(556, 14),"global_position":Vector2(564, 94),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-]
-}
-
-[layer_names]
-
-2d_physics/layer_1="World"
-2d_physics/layer_2="Player"
-2d_physics/layer_3="Enemy"
+common/enable_pause_aware_picking=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+environment/default_environment="res://default_env.tres"
