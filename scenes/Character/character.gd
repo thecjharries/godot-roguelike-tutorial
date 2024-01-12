@@ -1,16 +1,19 @@
 extends KinematicBody2D
+class_name Character
 
+const FRICTION: float = 0.15
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(int) var acceleration: int = 40
+export(int) var max_speed: int = 100
 
+var move_direction: Vector2 = Vector2.ZERO
+var velocity: Vector2 = Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _physics_process(_delta: float) -> void:
+	velocity = move_and_slide(velocity)
+	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func move() -> void:
+	move_direction = move_direction.normalized()
+	velocity += move_direction * acceleration
+	velocity = velocity.clamped(max_speed)
