@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "FiniteStateMachine",
 "language": "GDScript",
 "path": "res://scenes/Character/finite_state_machine.gd"
+}, {
+"base": "Character",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/Character/Player/player.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
-"FiniteStateMachine": ""
+"FiniteStateMachine": "",
+"Player": "res://assets/sprites/knight_idle_anim_f0.png"
 }
 
 [application]
