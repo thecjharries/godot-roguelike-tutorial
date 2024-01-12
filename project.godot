@@ -27,7 +27,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Character": "",
 "FiniteStateMachine": "",
-"Player": "res://assets/sprites/knight_idle_anim_f0.png"
+"Player": "res://assets/sprites/hero/knight_idle_anim_f0.png"
 }
 
 [application]
