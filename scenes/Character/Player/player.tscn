@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/Character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Character/Player/player.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/hero/knight_idle_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/hero/knight_run_spritesheet.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Character/Player/player_fsm.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/weapons/weapon_sword_1.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -66,6 +67,9 @@ animations = [ {
 "name": "move",
 "speed": 5.0
 } ]
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 4.0
 
 [sub_resource type="Animation" id=14]
 length = 0.001
@@ -141,6 +145,8 @@ tracks/1/keys = {
 }
 
 [node name="Player" instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="FiniteStateMachine" parent="." index="0"]
@@ -151,7 +157,22 @@ frames = SubResource( 1 )
 animation = "move"
 frame = 1
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 0, 3 )
+shape = SubResource( 17 )
+
+[node name="Sword" type="Node2D" parent="." index="3"]
+
+[node name="Node2D" type="Node2D" parent="Sword" index="0"]
+rotation = -1.5708
+
+[node name="Sprite" type="Sprite" parent="Sword/Node2D" index="0"]
+position = Vector2( 7, 3 )
+rotation = -0.785398
+texture = ExtResource( 6 )
+offset = Vector2( 5, -4 )
+
+[node name="AnimationPlayer" parent="." index="4"]
 anims/RESET = SubResource( 14 )
 anims/idle = SubResource( 15 )
 anims/move = SubResource( 16 )
